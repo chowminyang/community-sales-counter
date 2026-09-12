@@ -1,81 +1,24 @@
 # Community Sales Counter
 
-A free, customisable sales counter for **parents and adult organisers** running community fairs, homeschool markets and small stalls. Adapt it with ChatGPT using your own product photos and price list.
+A free sales counter for family stalls and community fairs. Tap a product, check the bill and record the sale. Build your own version with ChatGPT—no coding experience needed.
 
-**[Download the ZIP](https://github.com/chowminyang/community-sales-counter/archive/refs/heads/main.zip)** · **[Start with ChatGPT](docs/CHATGPT-QUICKSTART.md)** · **[Customise the code](docs/CUSTOMISATION.md)**
+![Example of a customised sales counter](docs/images/sales-counter-preview.png)
 
-## What your counter can look like
+*This example shows what you can make. Your app starts blank, ready for your own products, photos and prices.*
 
-![Example sales counter with product photos and a full-height bill panel; branding, prices and sales figures removed](docs/images/sales-counter-preview.png)
+## Get started
 
-*Illustrative screenshot of a customised counter, edited to hide branding, prices and sales figures. Your app starts with a blank catalogue: add your own products, photos and prices using the beginner walkthrough. The pictured products are not preloaded in the app.*
+1. **[Download the ZIP](https://github.com/chowminyang/community-sales-counter/archive/refs/heads/main.zip).** Save it on your computer.
+2. **Have a ChatGPT Plus account with Sites access.** Check that Sites is available in your account before starting. [Check availability](https://help.openai.com/en/articles/20001339).
+3. **Prepare one Word document or PDF** with your shop name, currency, and a photo, name and price for every product. Include each colour or size separately if needed.
+4. **Attach the ZIP and your product file to ChatGPT**, where Sites is available. Use the short message in the [simple walkthrough](docs/CHATGPT-QUICKSTART.md).
+5. **Let ChatGPT build it and help you set your own password.** Ask it to create a database too, so your sales are saved when you close the app. No password is included in this download.
+6. **Check the photos and prices, try a pretend sale, then publish.** ChatGPT will give you a link to open on your tablet or phone.
 
-## What it does
+**[Follow the simple walkthrough →](docs/CHATGPT-QUICKSTART.md)**
 
-- Product tiles, quantity controls and a full-height bill panel for tablets.
-- Records cash, bank-transfer and coupon payments **after you receive them**.
-- Whole-currency-unit discounts, itemised totals, history and undo.
-- Database-backed sales shared between devices, refreshed every three seconds.
-- Shop-password login and a confirmation step before resetting event sales.
+The app is free under the [MIT licence](LICENSE). ChatGPT or hosting charges may apply. It records payments you have received; it does not collect money. Keep it online while selling. Parents and adult organisers should manage the app.
 
-This is a sales record book, not a payment processor, customer checkout, inventory system or tax/accounting package. There is no stock cap. It does not collect customer names or payment-card details. Use one currency per event; amounts use two decimal places and discounts round to whole units.
+## Want to edit the code yourself?
 
-## First time? Start here
-
-**[Open the step-by-step beginner walkthrough →](docs/CHATGPT-QUICKSTART.md)**
-
-You do not need to understand code or use a terminal. The walkthrough shows you how to download the files, attach your photos, give ChatGPT your prices, choose your own password, and ask it to make your website and its private sales record book. It includes a message you can copy and paste, a pretend-sale check, and help if you get stuck.
-
-The app has **no original branding, preloaded product photos or prices, credentials, sales data or existing deployment IDs**. The documentation includes only the illustrative screenshot above. Six text placeholders have `price: null` and cannot be sold until configured. Each colour/size can have its own product entry. Photos are optional and served from `public/products/`.
-
-Sites availability and hosting/storage limits depend on your account. This code is free under MIT; a compatible ChatGPT plan or hosting service may have costs. See [OpenAI’s current Sites guide](https://help.openai.com/en/articles/20001339). Creating a new database and configuring secrets are part of setup, not something downloading a ZIP does automatically.
-
-## Set your own password
-
-There is **no default or existing password** in this download. Choose a unique password for your shop. For a hosted Site, ask ChatGPT to set it as the private `SHOP_PASSWORD` secret through the secrets setup flow. For local use, put it in your ignored `.dev.vars` file. Never put your password in source code, GitHub, a public prompt or screenshots. The counter stays locked until a password is configured.
-
-## Run locally (Node.js 24+)
-
-```sh
-npm ci
-cp .dev.vars.example .dev.vars
-# Set SHOP_PASSWORD in .dev.vars to a unique password. Never commit this file.
-npm run build
-npm run db:migrate:local
-npm run start
-```
-
-Open the local address printed by Wrangler (usually `http://localhost:8787`). The local D1 database is stored under ignored `.wrangler/`. Use `npm run dev` for editing. Apply migrations with the provided command first. Restart after changing `.dev.vars`.
-
-```sh
-npm test
-npx tsc --noEmit
-npm run build
-```
-
-The API tests use an isolated, in-memory SQLite database and synthetic prices. They never connect to a live shop.
-
-## Deploy
-
-This release targets **ChatGPT Sites / Vinext / Cloudflare D1**. Ask ChatGPT to follow [the deployment guide](docs/DEPLOYMENT.md). It has intentionally been adapted from a Next.js/PostgreSQL counter: do not deploy it as an ordinary Next.js app on Vercel without adapting the runtime and database layer.
-
-## Change files
-
-| File | What to change |
-| --- | --- |
-| `lib/shop.ts` | Shop title, currency, locale, time zone and bank-transfer label |
-| `lib/catalog.ts` | Product IDs, names, prices in cents and photo filenames |
-| `public/products/` | Your own product images |
-| `app/globals.css` | Colours, spacing and tablet layout |
-| `db/schema.ts`, `drizzle/` | Database schema and versioned migrations |
-| `docs/CHATGPT-QUICKSTART.md` | Ready-to-paste customisation prompt |
-
-## Before a real event
-
-Set a unique password; confirm all prices; check that an unauthenticated device cannot read sales; record and undo a clearly identified test sale; confirm totals synchronise to a second device. A failed save leaves the bill for retry. Current unsaved bills live in browser memory and are lost on a reload; only saved sales persist. Keep the app online while selling. **Reset permanently removes event sales**—export/back up records externally before using it if you need to retain them. No export button is included in this release.
-
-This app is for adult organisers, with a shared shop login rather than individual staff accounts. Review AI-generated changes before using them. Keep your customised shop private or password-protected; publishing the source code does not make your database public.
-
-## Licence and contributions
-
-MIT — see [LICENSE](LICENSE). Third-party dependencies keep their respective licences; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). Suggestions and improvements are welcome as issues or pull requests. Please never include passwords, database dumps or personal details in them.
+[Developer instructions](docs/DEVELOPERS.md) · [Customisation](docs/CUSTOMISATION.md) · [Deployment](docs/DEPLOYMENT.md) · [Third-party notices](THIRD_PARTY_NOTICES.md)
