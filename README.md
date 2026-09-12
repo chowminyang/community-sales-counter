@@ -4,6 +4,12 @@ A free, customisable sales counter for **parents and adult organisers** running 
 
 **[Download the ZIP](https://github.com/chowminyang/community-sales-counter/archive/refs/heads/main.zip)** · **[Start with ChatGPT](docs/CHATGPT-QUICKSTART.md)** · **[Customise the code](docs/CUSTOMISATION.md)**
 
+## What your counter can look like
+
+![Example sales counter with product photos and a full-height bill panel; branding, prices and sales figures removed](docs/images/sales-counter-preview.png)
+
+*Illustrative screenshot of a customised counter, edited to hide branding, prices and sales figures. Your app starts with a blank catalogue: add your own products, photos and prices using the beginner walkthrough. The pictured products are not preloaded in the app.*
+
 ## What it does
 
 - Product tiles, quantity controls and a full-height bill panel for tablets.
@@ -20,7 +26,7 @@ This is a sales record book, not a payment processor, customer checkout, invento
 
 You do not need to understand code or use a terminal. The walkthrough shows you how to download the files, attach your photos, give ChatGPT your prices, choose your own password, and ask it to make your website and its private sales record book. It includes a message you can copy and paste, a pretend-sale check, and help if you get stuck.
 
-The download has **no original branding, product photos, prices, credentials, sales data or existing deployment IDs**. Six text placeholders have `price: null` and cannot be sold until configured. Each colour/size can have its own product entry. Photos are optional and served from `public/products/`.
+The app has **no original branding, preloaded product photos or prices, credentials, sales data or existing deployment IDs**. The documentation includes only the illustrative screenshot above. Six text placeholders have `price: null` and cannot be sold until configured. Each colour/size can have its own product entry. Photos are optional and served from `public/products/`.
 
 Sites availability and hosting/storage limits depend on your account. This code is free under MIT; a compatible ChatGPT plan or hosting service may have costs. See [OpenAI’s current Sites guide](https://help.openai.com/en/articles/20001339). Creating a new database and configuring secrets are part of setup, not something downloading a ZIP does automatically.
 
