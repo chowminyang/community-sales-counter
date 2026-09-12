@@ -14,13 +14,11 @@ A free, customisable sales counter for **parents and adult organisers** running 
 
 This is a sales record book, not a payment processor, customer checkout, inventory system or tax/accounting package. There is no stock cap. It does not collect customer names or payment-card details. Use one currency per event; amounts use two decimal places and discounts round to whole units.
 
-## Make it yours — no coding experience required
+## First time? Start here
 
-1. Download the ZIP above, or select **Code → Download ZIP** on GitHub.
-2. Open ChatGPT **Work**, or **Codex/Work** in the desktop app, with Sites available.
-3. Attach the ZIP, your product photos and a price list. If ZIP uploads cannot be read, unzip it and open the folder in Codex, or attach the relevant files.
-4. Copy the prompt in [CHATGPT-QUICKSTART.md](docs/CHATGPT-QUICKSTART.md). Ask ChatGPT to customise this code, create **your own new Site and database**, configure a private shop password and show a preview.
-5. Review every name, photo, price, variant and currency. Test a sale and undo with two devices. Publish only after reviewing it.
+**[Open the step-by-step beginner walkthrough →](docs/CHATGPT-QUICKSTART.md)**
+
+You do not need to understand code or use a terminal. The walkthrough shows you how to download the files, attach your photos, give ChatGPT your prices, choose your own password, and ask it to make your website and its private sales record book. It includes a message you can copy and paste, a pretend-sale check, and help if you get stuck.
 
 The download has **no original branding, product photos, prices, credentials, sales data or existing deployment IDs**. Six text placeholders have `price: null` and cannot be sold until configured. Each colour/size can have its own product entry. Photos are optional and served from `public/products/`.
 

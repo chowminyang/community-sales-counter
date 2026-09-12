@@ -553,7 +553,7 @@ export default function Page() {
                 {busy ? 'Saving…' : 'Paid · Cash'}
               </Button>
               <Button className="paynow" disabled={!count || busy} onClick={() => pay('paynow')}>
-                {busy ? 'Saving…' : 'Paid · {shop.transferLabel}'}
+                {busy ? 'Saving…' : `Paid · ${shop.transferLabel}`}
               </Button>
               <Button className="coupons" disabled={!count || busy} onClick={() => pay('coupons')}>
                 {busy ? 'Saving…' : 'Paid · Coupons'}

@@ -13,3 +13,4 @@ dist/
 .DS_Store
 release/
 .openai/*.credential*
+next-env.d.ts
