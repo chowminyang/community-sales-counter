@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.vinext/
+.next/
+.wrangler/
+.vercel/
+.env*
+.dev.vars*
+!.env.example
+!.dev.vars.example
+*.tsbuildinfo
+*.log
+.DS_Store
+release/
+.openai/*.credential*
