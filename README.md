@@ -2,9 +2,9 @@
 
 A free sales counter for family stalls and community fairs. Tap a product, check the bill and record the sale. Build your own version with ChatGPT—no coding experience needed.
 
-![Example of a customised sales counter](docs/images/sales-counter-preview.png)
+![AI-generated example sales counter with fictional products](docs/images/sales-counter-preview.png)
 
-*This example shows what you can make. Your app starts blank, ready for your own products, photos and prices.*
+*AI-generated preview with fictional product images and names. Your app starts blank, ready for your own products, photos and prices.*
 
 ## Get started
 
